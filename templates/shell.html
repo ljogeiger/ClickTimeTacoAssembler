@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="main-content">
+    <form method="POST" action="">
+      {% for shell in response %}
+      <div class="shell">
+          <input type="submit" class="btn-get-next" name="user_choice" value="{{ shell }}">
+      </div>
+      {% endfor %}
+    </form>
+</div>
+{% endblock content %}

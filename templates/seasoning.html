@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="main-content">
+    <form method="POST" action="">
+      {% for seasoning in response %}
+      <div class="seasoning">
+          <input type="submit" class="btn-get-next" name="user_choice" value="{{ seasoning }}">
+      </div>
+      {% endfor %}
+    </form>
+</div>
+{% endblock content %}

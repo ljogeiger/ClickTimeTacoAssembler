@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="main-content">
+    <h2>Please select maximum of three condiments from the list below</h2>
+    <form method="POST" action="">
+      <select multiple name="condiments" class="custom-select">
+          {% for condiment in response %}
+          <option name="user_choice" value="{{ condiment }}">{{ condiment }}</option>
+          {% endfor %}
+      </select>
+      <input type="submit" class="btn-get-next">
+    </form>
+</div>
+{% endblock content %}

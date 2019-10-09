@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="main-content">
+    <h2>Please select maximum of two mixins from the list below</h2>
+    <form method="POST" action="">
+        <select multiple class="custom-select" name="mixins">
+            {% for mixin in response %}
+            <option name="user_choice" value="{{ mixin }}">{{ mixin }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" class="btn-get-next">
+    </form>
+</div>
+{% endblock content %}

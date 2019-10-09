@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="main-content">
+      {% for taco in response %}
+      <div class="taco">
+          <h2>{{ taco }}</h2>
+      </div>
+      <a href="./{{ loop.index }}" style="color: white" class="btn-get-next">Remove</a>
+      {% endfor %}
+      <div class="next-steps">
+        <a href="{{ url_for('addShell') }}" class="btn-get-started">New Taco</a>
+        <a href="{{ url_for('randomTaco') }}" class="btn-get-started">Random Taco</a>
+        <a href="{{ url_for('thankYou') }}" class="btn-get-started">Checkout</a>
+      </div>
+</div>
+{% endblock content %}

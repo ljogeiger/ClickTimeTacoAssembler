@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Taco Assembler</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="A website designed to make tacos." name="description">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS File 4.0.0-->
+    <link href="../static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files for Animations and Fonts-->
+    <link href="../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../static/lib/animate/animate.min.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="../static/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--==========================
+  Header
+  ============================-->
+    <header id="header">
+        <div class="container">
+            <!-- Header Logo -->
+            <div id="logo" class="pull-left">
+                <h3><a href="/">Lukas Geiger</a></h3>
+            </div>
+        </div>
+    </header><!-- #header -->
+    <!-- Main content -->
+    <section id="hero">
+        <div class="hero-container">
+            <!-- Handles any alerts -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col">
+                        <div class="text-center alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            {% block content %}{% endblock %}
+        </div>
+    </section>
+</body>
+
+</html>
